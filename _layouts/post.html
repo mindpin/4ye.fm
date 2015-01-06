@@ -1,0 +1,92 @@
+---
+layout: default
+---
+{% for item in site.data.broadcasts %}{% if item.name == page.key %}
+<div class='page-broadcast'>
+  <div class='page-broadcast-info'>
+
+    <h2>{{ item.title }}</h2>
+
+    <!-- 播放器 -->
+    <div class='player'>
+      <audio controls='true' name='media' src='{{ item.broadcast_url }}'></audio>
+    </div>
+
+    <!-- 二维码 -->
+    <div class='qr'>
+      <div rel='qrcode' data-url='{{ page.permalink | prepend: site.url }}' ></div>
+    </div>
+
+    <!-- 关键词 -->
+    <div class='keywords'>
+      <dt>keywords</dt>
+      {% for keyword in item.keywords %}
+        <dd>{{ keyword }}</dd>
+      {% endfor %}
+    </div>
+
+    <!-- 主讲人 -->
+    <div class='host'>
+      <dt>host:</dt>
+      <dd>
+        <img class='avatar' src='{{ item.host.avatar }}'></img>
+        <div class='info'>
+          <div class='name'>{{ item.host.name }}</div>
+          {% if item.host.github %}
+            <a class='github' href='{{ item.host.github }}' target='_blank'>github</a>
+          {% endif %}
+          {% if item.host.weibo %}
+            <a class='weibo' href='{{ item.host.weibo }}' target='_blank'>weibo</a>
+          {% endif %}
+        </div>
+      </dd>
+    </div>
+
+    <!-- 参与者 -->
+    {% if item.guests %}
+      <div class='guests'>
+        <dt>guests:</dt>
+        {% for guest in item.guests %}
+          <dd>
+            <img class='avatar' src='{{ guest.avatar }}'></img>
+            <div class='info'>
+              <div class='name'>{{ guest.name }}</div>
+              {% if guest.github %}
+                <a class='github' href='{{ guest.github }}' target='_blank'>github</a>
+              {% endif %}
+              {% if guest.weibo %}
+                <a class='weibo' href='{{ guest.weibo }}' target='_blank'>weibo</a>
+              {% endif %}
+            </div>
+          </dd>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <!-- 节目简介 -->
+    <div class='desc'>{{ item.desc }}</div>
+
+    <!-- 相关链接 -->
+    <div class='related_links'>
+      <dt>related_links</dt>
+      {% for related_link in item.related_links %}
+        <dd>
+          <a href='{{ related_link.url }}'>{{ related_link.title }}</a>
+        </dd>
+      {% endfor %}
+    </div>
+    
+    <article class='info-content'>
+      {{ content }}
+    </article>
+  </div>
+
+  <div class='page-share' data-url='{{ page.permalink | prepend: site.url }}'>
+    {% include bshare.html %}
+  </div>
+
+  <div class='page-comments'>
+    {% include duoshuo.html key=item.name title=item.title path=page.permalink %}
+  </div>
+  
+</div>{% endif %}{% endfor %}

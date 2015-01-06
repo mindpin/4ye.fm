@@ -1,0 +1,28 @@
+- title: 怎样开始学习编程？
+  name: how-to-start-learning-programming
+  broadcast_url: http://oss-cn-hangzhou.aliyuncs.com/mindpin_dev/%E6%91%86%E6%B8%A1%E4%BA%BA%E4%B9%8B%E6%AD%8C.mp3
+  host:
+    name: ben7th
+    avatar: http://tp2.sinaimg.cn/1418521581/180/5639678895/1
+    github: https://github.com/ben7th
+    weibo: http://www.weibo.com/ben7th
+  guests:
+    - name: fushang318
+      avatar: http://tp2.sinaimg.cn/1697714197/180/1266747313/1
+      github: http://www.weibo.com/fushang318
+    - name: 石酷
+      avatar: http://tp1.sinaimg.cn/1939898004/180/5683437862/1
+      weibo: http://www.weibo.com/scrutiny1
+  keywords:
+    - 编程
+    - 入门
+  related_links:
+    - title: fushang318 的微博
+      url: http://www.weibo.com/fushang318
+    - title: ben7th 的 github
+      url: https://github.com/ben7th
+  published_at: '2014.12'
+  desc: |
+    4ye.fm 播客的第一期已经做出来了，长度75分钟，主题是《怎样开始学习编程》。<br/>
+    我的想法是，虽然是技术类的播客，但是争取尽可能把内容做得通俗易懂，让大家听起来没有压力。<br/>
+    如果有什么意见和建议就直接在评论上告诉我吧 :)<br/>

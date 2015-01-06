@@ -1,0 +1,159 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+// Our variables
+$base-font-family: Helvetica, Arial, sans-serif;
+$base-font-size:   16px;
+$small-font-size:  $base-font-size * 0.875;
+$base-line-height: 1.5;
+
+$spacing-unit:     30px;
+
+$text-color:       #111;
+$background-color: #fdfdfd;
+$brand-color:      #2a7ae2;
+
+$grey-color:       #828282;
+$grey-color-light: lighten($grey-color, 40%);
+$grey-color-dark:  darken($grey-color, 25%);
+
+$on-palm:          600px;
+$on-laptop:        800px;
+
+@mixin media-query($device) {
+    @media screen and (max-width: $device) {
+        @content;
+    }
+}
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import
+        "base",
+        "layout",
+        "syntax-highlighting"
+;
+
+
+//
+@mixin clearfix {
+  &:before, &:after {
+    content:"";
+    display:table;
+  }
+  &:after {
+    clear:both;
+  }
+}
+
+.page-broadcast {
+  .page-broadcast-info {
+    margin-bottom: 50px;
+    background: white;
+    padding:30px;
+    border:solid 1px #ddd;
+    position: relative;
+
+    h2 {
+      margin-bottom:20px;
+      margin-top:0;
+      font-size: 24px;
+      height:30px;line-height:30px;
+    }
+
+    .desc {
+      color: #777;
+      background-color: #F9F9F9;
+      border-left: solid 4px #ddd;
+      padding: 15px 15px;
+      margin-bottom: 30px;
+      font-size: 16px;
+    }
+
+    .qr {
+      position: absolute;
+      width:120px;height:120px;
+      top:-15px;right:30px;
+      border:solid 1px #ddd;
+      background-color: #FFF;
+    }
+    .keywords{
+      margin-bottom: 20px;
+      dt{
+        font-weight: bold;
+      }
+      dd{
+        display: inline-block;
+      }
+    }
+    .host, .guests{
+      margin-bottom: 20px;
+      dt{
+        font-weight: bold;
+      }
+      dd{
+        margin: 5px;
+        display: inline-block;
+        .avatar{
+          float: left;
+          width: 50px;
+          height: 50px;
+        }
+        .info{
+          margin-left: 10px;
+          float: left;
+        }
+      }
+    }
+  }
+
+  .page-share {
+    margin-bottom: 50px;
+    @include clearfix;
+    .share-btns {
+      span {
+        float:left;
+        height:25px;line-height:25px;
+        font-size:16px;
+      }
+      a.sre {
+        display:block;
+        float:left;
+        margin-right:5px;
+        font-size:0;
+        line-height:20em;
+        overflow:hidden;
+        width:25px;height:25px;
+        // background-color:white;
+        background:url(syncicon24-bgwhite.png) 0 0 no-repeat;
+        &.sinaminiblog{background-position: 0 0;}
+        &.qqmb{background-position: -90px 0;}
+        &.qzone{background-position: -60px 0;}
+        &.douban{background-position: -150px 0;}
+        &.renren{background-position: -120px 0;}
+        &.more{background-position: -330px 0;}
+      }
+
+      .BSHARE_COUNT {
+        float:left !important;
+        display: block;
+        background: #ECECEC;
+        border-radius:4px;
+        padding:0 10px;
+        font-size:14px;
+        position:relative;
+        margin-left:10px;
+        &:before {
+          content:"";
+          border:solid 6px transparent;
+          border-right:solid 6px #ECECEC;
+          position:absolute;
+          left:-6px * 2;top:6px;
+        }
+      }
+    }
+  }
+  .page-comments {
+    margin-bottom: 30px;
+  }
+}
