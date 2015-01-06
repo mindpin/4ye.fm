@@ -1,7 +1,7 @@
 title: 四叶技术播客
 description: |
   4ye.fm 为编程爱好者，以及对计算机与编程有兴趣的朋友提供精心准备的播客节目。力求通俗易懂，让大家都有所收获。
-url: "http://www.mindpin.com/4ye.fm"
+url: "http://mindpin.github.io/4ye.fm"
 # Build settings
 markdown: kramdown
 
