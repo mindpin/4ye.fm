@@ -6,7 +6,7 @@ layout: default
 <ul class="broadcasts">
   {% for item in site.data.broadcasts %}
     <li>
-      <a class="item" href="{{ item.url }}/{{item.name}}.html">{{ item.title }}</a>
+      <a class="item" href="{{ site.url }}/{{item.name}}.html">{{ item.title }}</a>
     </li>
   {% endfor %}
 </ul>
